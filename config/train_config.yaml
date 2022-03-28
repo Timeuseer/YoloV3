@@ -1,0 +1,38 @@
+# 分类类别文件路径
+classes_path: model_data/voc_classes.txt
+# 预训练权重文件路径，为空则不加载
+model_path: ""
+# 输入的大小
+input_shape:
+  - 416
+  - 416
+#先验框对应的txt文件
+anchors_path: model_data/yolo_anchors.txt
+#先验框索引
+anchors_mask:
+  - - 6
+    - 7
+    - 8
+  - - 3
+    - 4
+    - 5
+  - - 0
+    - 1
+    - 2
+# 冻结阶段训练参数
+Init_Epoch: 0
+Freeze_Epoch: 2
+Freeze_batch_size: 8
+Freeze_lr: 0.0005
+# 解冻阶段训练参数
+UnFreeze_Epoch: 1
+UnFreeze_batch_size: 8
+UnFreeze_lr: 0.0001
+# 是否进行冻结训练
+Freeze_Train: True
+# 是否进行多线程，若为0则不开启多线程，>0则开启多少个线程
+num_workers: 0
+# 训练集图片和标签信息文件路径
+train_annotation_path: 2007_train.txt
+# 验证集图片和标签信息文件路径
+val_annotation_path: 2007_val.txt
